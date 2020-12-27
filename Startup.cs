@@ -19,7 +19,8 @@ namespace OAuthGitClientApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddRazorPages();
+            services.AddRazorPages()
+                .AddRazorRuntimeCompilation();
 
             services.AddAuthentication();
         }
