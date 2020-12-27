@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace OAuthGitClientApp.Extensions
 {
-    public static class OAuthOptionsExtensions
+    public static class GitHubAuthExtensions
     {
         private static readonly Func<OAuthCreatingTicketContext, Task> GetGitHubUserClaims = async context =>
         {
