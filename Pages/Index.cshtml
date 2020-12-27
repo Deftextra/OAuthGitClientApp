@@ -2,6 +2,20 @@
 @using Microsoft.AspNetCore.Mvc.RazorPages
 @model IndexModel
 
+@if (!User.Identity.IsAuthenticated)
+{
+    <div class="text-center ">
+        You must Sign in
+    </div>
+}
+else
+{
+    
+    <div class="text-center border-top-0 ">
+        You are signed In
+    </div>
+    
+}
 
 @functions
 {

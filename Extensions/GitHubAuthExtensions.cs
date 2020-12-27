@@ -36,6 +36,7 @@ namespace OAuthGitClientApp.Extensions
                 {
                     options.DefaultAuthenticateScheme = CookieAuthenticationDefaults .AuthenticationScheme;
                     options.DefaultSignInScheme = CookieAuthenticationDefaults .AuthenticationScheme;
+                    options.DefaultSignOutScheme = CookieAuthenticationDefaults .AuthenticationScheme;
                     options.DefaultChallengeScheme = "github";
                 })
                 .AddCookie()
