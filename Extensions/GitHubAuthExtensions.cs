@@ -17,17 +17,14 @@ namespace OAuthGitClientApp.Extensions
     {
         private static readonly Func<OAuthCreatingTicketContext, Task> GetGitHubUserClaims = async context =>
         {
-            var request =
-                new HttpRequestMessage(HttpMethod.Get, context.Options.UserInformationEndpoint);
+            var request = new HttpRequestMessage(HttpMethod.Get, context.Options.UserInformationEndpoint);
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-            request.Headers.Authorization =
-                new AuthenticationHeaderValue("Bearer", context.AccessToken);
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", context.AccessToken);
 
-            var response = await context.Backchannel.SendAsync(request,
-                HttpCompletionOption.ResponseContentRead,
+            var response = await context.Backchannel.SendAsync(request, HttpCompletionOption.ResponseContentRead,
                 context.HttpContext.RequestAborted);
             response.EnsureSuccessStatusCode();
-
+            
             var json = JsonDocument.Parse(await response.Content.ReadAsStringAsync());
             context.RunClaimActions(json.RootElement);
         };
