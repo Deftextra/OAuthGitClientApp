@@ -1,25 +1,13 @@
 ﻿@page
-@using Microsoft.AspNetCore.Mvc.RazorPages
 @model IndexModel
 
-@if (!User.Identity.IsAuthenticated)
+@section SideNav
 {
-    <div class="text-center ">
-        You must Sign in
-    </div>
-}
-else
-{
-    
-    <div class="text-center border-top-0 ">
-        You are signed In
-    </div>
-    
+    <a class="nav-link active" id="v-pills-repositories-tab" data-toggle="pill" href="#v-pills-repositories" role="tab" aria-controls="v-pills-repositories" aria-selected="true">Home</a>
 }
 
-@functions
-{
-   public class IndexModel : PageModel
-   {
-   }
-}
+<h1>  This app is an example app using Oauth2.0 to login</h1>
+
+<article>
+   Some text
+</article>

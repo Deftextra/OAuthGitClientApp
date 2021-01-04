@@ -1,0 +1,37 @@
+﻿<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    
+    <div class="d-md-flex">
+        <a asp-page="index" class="navbar-brand">Home</a>
+        <div id="test" class="collapse navbar-collapse navbarCollapse ml-md-2">
+            <ul class="nav navbar-nav">
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="nav-item">
+                        <a asp-page="profile" class="nav-link">Profile</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="@await Component.InvokeAsync("UserUrlNavItem")">Github profile</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+    
+        
+
+    <div class="navbar-nav flex-md-grow-1 justify-content-center">
+        <a class="nav-link" href="https://github.com/Deftextra/OAuthGitClientApp">
+            <span class="mr-2">Project</span>
+            <img src="Images/GitHub-Mark-32px.png"/>
+        </a>
+    </div>
+
+    <div class="collapse navbar-collapse navbarCollapse">
+        <vc:avatar-nav-item/>
+    </div>
+
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</nav>

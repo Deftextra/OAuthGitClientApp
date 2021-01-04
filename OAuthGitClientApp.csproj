@@ -10,4 +10,17 @@
     <PackageReference Include="Octokit" Version="0.48.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\Images\GitHub-Mark-32px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Shared\Components\UserNavItem\Default.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Shared\_Layout.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Shared\_NavBarPartial.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\_ViewImports.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\_ViewStart.cshtml" />
+  </ItemGroup>
+
 </Project>

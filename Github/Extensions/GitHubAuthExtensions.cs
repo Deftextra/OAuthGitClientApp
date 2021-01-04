@@ -10,8 +10,9 @@ using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Octokit;
 
-namespace OAuthGitClientApp.Extensions
+namespace OAuthGitClientApp.Github.Extensions
 {
     public static class GitHubAuthExtensions
     {
@@ -55,9 +56,9 @@ namespace OAuthGitClientApp.Extensions
             options.SaveTokens = true;
             options.ClaimActions.MapJsonKey(ClaimTypes.NameIdentifier, "id");
             options.ClaimActions.MapJsonKey(ClaimTypes.Name, "name");
-            options.ClaimActions.MapJsonKey("urn:github:login", "login");
-            options.ClaimActions.MapJsonKey("urn:github:url", "html_url");
-            options.ClaimActions.MapJsonKey("urn:github:avatar", "avatar_url");
+            options.ClaimActions.MapJsonKey(GitClaimTypes.Login, "login");
+            options.ClaimActions.MapJsonKey(GitClaimTypes.Url, "html_url");
+            options.ClaimActions.MapJsonKey(GitClaimTypes.AvatarUrl, "avatar_url");
             options.Events = new OAuthEvents
             {
                 OnCreatingTicket = GetGitHubUserClaims

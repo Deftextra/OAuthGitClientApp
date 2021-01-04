@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using OAuthGitClientApp.Extensions;
+using OAuthGitClientApp.Github.Extensions;
 
 namespace OAuthGitClientApp
 {
@@ -23,7 +23,6 @@ namespace OAuthGitClientApp
             services.AddControllers();
             services.AddRazorPages()
                 .AddRazorRuntimeCompilation();
-
             services.AddGitHubAuth(_configuration);
 
         }

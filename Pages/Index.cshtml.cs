@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace OAuthGitClientApp.Pages
 {
@@ -6,7 +7,7 @@ namespace OAuthGitClientApp.Pages
     {
         public void OnGet()
         {
-            
+
         }
     }
 }

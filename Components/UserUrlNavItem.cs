@@ -5,19 +5,21 @@ using OAuthGitClientApp.Github;
 
 namespace OAuthGitClientApp.Components
 {
-    public class UserNavItem : ViewComponent
+    public class UserUrlNavItem : ViewComponent
     {
-        public async Task<IViewComponentResult> InvokeAsync()
+        public async Task<string> InvokeAsync()
         {
+            
             var userAvatarUrl = string.Empty;
             if (User.Identity != null && User.Identity.IsAuthenticated)
             {
                 userAvatarUrl = UserClaimsPrincipal.Claims
-                    .SingleOrDefault(cl => cl.Type == GitClaimTypes.AvatarUrl)
+                    .SingleOrDefault(cl => cl.Type == GitClaimTypes.Url)
                     ?.Value;
             }
 
-            return View(model: userAvatarUrl);
+            return userAvatarUrl;
         }
+        
     }
 }

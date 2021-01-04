@@ -1,0 +1,25 @@
+﻿@model string ;
+
+<ul class="nav navbar-nav ml-md-auto">
+    <li class="nav-item dropdown">
+        @if (User.Identity.IsAuthenticated && Model != String.Empty)
+        {
+            <a href="#" class="nav-link dropdown-toggle p-0" data-toggle="dropdown">
+
+                <img width="40" height="40" src="@Model"/>
+            </a>
+        }
+        else
+        {
+            <a class="btn btn-outline-primary mt-md-" asp-action="Login" asp-controller="Auth">Login with github</a>
+        }
+        <div class="dropdown-menu dropdown-menu-right">
+            <a href="#" class="dropdown-item"> Your Repositories</a>
+            <a href="#" class="dropdown-item">Your Stars</a>
+            <a href="#" class="dropdown-item">Your Followers</a>
+            <a href="#" class="dropdown-item">Your Following</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" asp-action="Logout" asp-controller="Auth">Logout</a>
+        </div>
+    </li>
+</ul>
