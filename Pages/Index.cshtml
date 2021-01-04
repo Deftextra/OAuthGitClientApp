@@ -1,13 +1,21 @@
 ﻿@page
 @model IndexModel
 
-@section SideNav
+@section navHeader
 {
-    <a class="nav-link active" id="v-pills-repositories-tab" data-toggle="pill" href="#v-pills-repositories" role="tab" aria-controls="v-pills-repositories" aria-selected="true">Home</a>
+   @if (User.Identity.IsAuthenticated)
+   {
+      <a class="text-secondary nav-link" asp-page="profile"> Profile</a>
+   }
+   else
+   {
+       <a class="text-secondary nav-link" asp-controller="Auth" asp-action="Login">
+          Login with github
+       </a>
+   }
 }
 
 <h1>  This app is an example app using Oauth2.0 to login</h1>
-
 <article>
    Some text
 </article>

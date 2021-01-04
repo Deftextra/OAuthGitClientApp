@@ -2,25 +2,23 @@
 <html>
 <head>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"
+            asp-fallback-src="/lib/jquery/dist/jquery.min.js"
+            asp-fallback-test="window.jquery">
+    </script>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
           asp-fallback-href="/lib/twitter-bootstrap/css/bootstrap.min.css"
           asp-fallback-test-class="btn"
           asp-fallback-test-property="display"
           asp-fallback-test-value="inline-block"
           rel="stylesheet"/>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"
-            asp-fallback-src="/lib/jquery/dist/jquery.min.js"
-            asp-fallback-test="window.jquery">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
     </script>
-    
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"
             asp-fallback-src="/lib/jquery/dist/jquery.min.js"
             asp-fallback-test="window.jquery">
     </script>
-    
     <link href="css/site.css" rel="stylesheet"/>
-    <script src="js/site.js" defer></script>
 
     <title>GitHub Client</title>
 
@@ -33,18 +31,19 @@
 
 <div class="container-fluid text-center">
     <main class="row content">
-        <div class="col-md-2 sidenav align-self-start bg-dark m-1">
-            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                @await RenderSectionAsync("SideNav")
+        <div class="col-md-2 sidenav bg-dark m-1">
+            <div id="navHeader" class="">
+                @await RenderSectionAsync("navHeader")
             </div>
+            @await RenderSectionAsync("NavContent", false)
         </div>
-        <div class="col-md-9 page m-1">
+        <div class="col-md-9">
             @RenderBody()
         </div>
     </main>
 </div>
-<
 <partial name="_FooterPartial"/>
 
 </body>
+
 </html>

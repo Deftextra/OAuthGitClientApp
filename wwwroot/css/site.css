@@ -3,6 +3,10 @@
   border-radius: 0;
 }
 
+#navHeader {
+  font-size: large!important;
+}
+
 .row.content {
   /* TODO: Do some calculations */
   height: 90vh;
@@ -21,10 +25,6 @@ footer {
 }
 
 @media screen and (min-width: 768px) {
-
-  .sidenav {
-    height: calc(100% - 10px);
-  }
   .sidenav  .nav-link {
     margin-bottom: 10%;
     flex-shrink: 1;
@@ -38,9 +38,11 @@ footer {
     width: 40% ;
     flex-flow: row nowrap;
   }
-
-  .navbar {
+  .sep-line {
+    height: 2px;
+    border: 2px solid white;
   }
+  
 }
 
 @media screen and (max-width: 768px) {
