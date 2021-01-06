@@ -51,6 +51,12 @@ footer {
     padding: 15px;
   }
     
+  /*  */
+  .navbar-nav  img[src="Images/GitHub-Mark-32px.png"]: {
+  }
+        
+
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1390px) {

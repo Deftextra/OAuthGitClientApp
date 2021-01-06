@@ -1,5 +1,6 @@
 ﻿<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a asp-page="index" class="navbar-brand">Home</a>
+    <a asp-page="index" class="navbar-brand">Home</a>
+    
     <div id="test" class="collapse navbar-collapse navbarCollapse ml-md-2">
         <ul class="nav navbar-nav">
             @if (User.Identity.IsAuthenticated)
@@ -19,7 +20,7 @@
         </a>
     </div>
 
-    <div class="collapse navbar-collapse navbarCollapse">
+    <div id="ProfilePic" class="collapse navbar-collapse navbarCollapse">
         <vc:avatar-nav-item/>
     </div>
 
