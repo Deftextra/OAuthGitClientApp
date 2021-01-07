@@ -21,6 +21,9 @@
     <_ContentIncludedByDefault Remove="Pages\Shared\_NavBarPartial.cshtml" />
     <_ContentIncludedByDefault Remove="Pages\_ViewImports.cshtml" />
     <_ContentIncludedByDefault Remove="Pages\_ViewStart.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\dir\main.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\dir\main.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\dir\main.js.LICENSE.txt" />
   </ItemGroup>
 
 </Project>
