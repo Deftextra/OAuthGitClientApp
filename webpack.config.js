@@ -1,22 +1,22 @@
-// const HtmlWebPackPlugin = require("html-webpack-plugin");
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const RazorPartialViewsWebpackPlugin = require("razor-partial-views-webpack-plugin");
 
+const publicName = '/wwwroot/'
 const bundleFileName = 'main';
-const dirName = 'wwwroot/dist';
+const dirName = 'dist';
 
 module.exports = (env, argv) => {
     return {
-        entry: ['./src/index.js', './src/sass/index.scss'],
+        entry: './src/index.js',
         output: {
-            filename: bundleFileName + ".js",
-            path: path.resolve(__dirname, dirName)
+            filename: "main.js",
+            path: path.resolve(__dirname, "wwwroot/dir"),
+            publicPath: "https://localhost:8080"
         },
         devServer: {
-            // output assets to disk for ASP.NET
-            writeToDisk: true,
+           writeToDisk: true,
             // clearly display errors
             overlay: true,
             // include CORS headers
@@ -41,11 +41,8 @@ module.exports = (env, argv) => {
                 {
                     test: /\.s[ac]ss$/i,
                     use: [
-                        // Creates `style` nodes from JS strings
                         "style-loader",
-                        // Translates CSS into CommonJS
                         "css-loader",
-                        // Compiles Sass to CSS
                         "sass-loader",
                     ],
                 },
@@ -54,22 +51,14 @@ module.exports = (env, argv) => {
                     use: [
                         'file-loader'
                     ]
-                },
+                }
             ]
         },
         plugins: [
             new CleanWebpackPlugin(),
-            new MiniCssExtractPlugin({
-                filename: bundleFileName + '.js'
-            }),
             new RazorPartialViewsWebpackPlugin({
                 rules: [{
-                    // view for default chunk
-                    name: "main",
-                    template: {
-                        // Razor directive
-                        header: "@inherits System.Web.Mvc.WebViewPage"
-                    }
+                    name: "main"
                 }]
             })
         ]

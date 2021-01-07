@@ -1,4 +1,67 @@
-@import 'common.scss';
+@import "~bootstrap/scss/bootstrap";
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+}
+
+#navHeader {
+  font-size: large!important;
+}
+
+.row.content {
+  /* TODO: Do some calculations */
+  height: 90vh;
+}
+
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  border-radius: 0.6rem;
+}
+
+footer {
+  background-color: #555;
+  color: white;
+  padding: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .sidenav  .nav-link {
+    margin-bottom: 10%;
+    flex-shrink: 1;
+  }
+  .sidenav .nav {
+    padding: 10px;
+    flex-flow: nowrap column;
+  }
+  .navbar > div:first-child {
+    box-sizing: border-box;
+    width: 40% ;
+    flex-flow: row nowrap;
+  }
+  .sep-line {
+    height: 2px;
+    border: 2px solid white;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .sidenav {
+    height: max-content;
+    padding: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1390px) {
+  .sidenav {
+    max-width: 50%;
+    /* TODO: Do some calculation */
+    flex-basis: 20%;
+  }
+}
 body {
-  color: $color;
+  color: $black;
+  
 }
