@@ -1,4 +1,6 @@
 ﻿@page
+@using Microsoft.AspNetCore.Mvc.RazorPages
+@using Octokit
 @model IndexModel
 
 @section navHeader
@@ -17,5 +19,20 @@
 
 <h1>  This app is an example app using Oauth2.0 to login</h1>
 <article>
-   Some texbt
+   The main aim of this repository is to demonstrate the usage of OAuth2.0 Authorization protocol using asp.net.
+We use the Authorization Code Flow to aut
 </article>
+
+@functions
+{
+   public class IndexModel : PageModel
+   {
+
+      public async Task<IActionResult> OnGetAsync()
+      {
+         return Page();
+      }
+   }
+   
+}
+

@@ -9,22 +9,18 @@
 <header>
     <partial name="_NavBarPartial"/>
 </header>
-
-<div class="container-fluid text-center">
-    <main class="row content">
-        <div class="col-md-2 sidenav bg-dark m-1">
-            <div id="navHeader" class="">
-                @await RenderSectionAsync("navHeader")
-            </div>
-            @await RenderSectionAsync("NavContent", false)
+<div class="container-fluid row content text-center">
+    <div class="col-md-2 align-self-stretch sidenav bg-dark m-1">
+        <div id="navHeader">
+            @await RenderSectionAsync("navHeader")
         </div>
-        <div class="col-md-9">
-            @RenderBody()
-        </div>
-    </main>
+        @await RenderSectionAsync("NavContent", false)
+    </div>
+    <div class="col mb-1">
+        @RenderBody()
+    </div>
 </div>
 <partial name="_FooterPartial"/>
+
 </body>
-
-
 </html>

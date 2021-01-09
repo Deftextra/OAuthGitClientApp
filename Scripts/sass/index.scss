@@ -1,67 +1,99 @@
 @import "~bootstrap/scss/bootstrap";
 
+$side-content-overflow-point: 1390px;
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+}
+
 .navbar {
   margin-bottom: 0;
   border-radius: 0;
 }
 
 #navHeader {
-  font-size: large!important;
-}
-
-.row.content {
-  /* TODO: Do some calculations */
-  height: 90vh;
+  font-size: large !important;
 }
 
 .sidenav {
   padding-top: 20px;
-  background-color: #f1f1f1;
+  background-color: $dark;
   border-radius: 0.6rem;
 }
 
-footer {
-  background-color: #555;
-  color: white;
-  padding: 15px;
+.row.content {
+  width: 100%;
 }
+@media screen and (min-width: map-get($grid-breakpoints, md)) {
+ .sidenav {
+    .nav-link {
+      margin-bottom: 10%;
+      flex-shrink: 1;
+    }
+    .nav {
+      padding: 10px;
+      flex-flow: nowrap column;
+    }
+  }
 
-@media screen and (min-width: 768px) {
-  .sidenav  .nav-link {
-    margin-bottom: 10%;
-    flex-shrink: 1;
-  }
-  .sidenav .nav {
-    padding: 10px;
-    flex-flow: nowrap column;
-  }
   .navbar > div:first-child {
     box-sizing: border-box;
-    width: 40% ;
+    width: 40%;
     flex-flow: row nowrap;
   }
   .sep-line {
     height: 2px;
     border: 2px solid white;
   }
-
 }
 
-@media screen and (max-width: 768px) {
+footer {
+  background-color: $dark;
+  padding: 10px;
+  color: $white;
+  margin: 0;
+}
+
+@media screen and (max-width: map-get($grid-breakpoints, md)) {
   .sidenav {
     height: max-content;
     padding: 15px;
+    .nav {
+      .nav-link{
+        flex: 1 1 0;
+      }
+    }
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1390px) {
+@media screen and (min-width: map-get($grid-breakpoints, md)) and (max-width: $side-content-overflow-point) {
+  /* Prevent text overflow when side-nav becomes too small*/
   .sidenav {
     max-width: 50%;
-    /* TODO: Do some calculation */
     flex-basis: 20%;
   }
 }
+
+/* Prevent footer from stacking on top*/
 body {
-  color: $black;
-  
+  display: flex;
+  flex-flow: column nowrap;
+  position: relative;
+  min-height: 100vh;
 }
+
+body > .container-fluid {
+  flex: 1 0 auto;
+
+}
+
+footer {
+  box-sizing: border-box;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+/*------------------------------------*/
+
+
