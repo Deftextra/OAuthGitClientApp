@@ -26,6 +26,16 @@ $side-content-overflow-point: 1390px;
   width: 100%;
 }
 @media screen and (min-width: map-get($grid-breakpoints, md)) {
+/* Show only profile picture for screen size greater than md */
+  #ProfileWithPicture
+  {
+    display: list-item; 
+  }
+
+  #ProfileWithoutPicture {
+    display: none;
+  }
+  
  .sidenav {
     .nav-link {
       margin-bottom: 10%;
@@ -56,6 +66,16 @@ footer {
 }
 
 @media screen and (max-width: map-get($grid-breakpoints, md)) {
+/* Show only logout button for screen size less than md*/
+  #ProfileWithPicture
+  {
+    display: none;
+  }
+
+  #ProfileWithoutPicture {
+    display: list-item;
+  }
+  
   .sidenav {
     height: max-content;
     padding: 15px;
