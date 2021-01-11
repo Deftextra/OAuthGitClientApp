@@ -1,7 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
 
 $side-content-overflow-point: 1390px;
-
 .container-fluid {
   margin: 0;
   padding: 0;
@@ -74,6 +73,7 @@ footer {
 
   #ProfileWithoutPicture {
     display: list-item;
+    margin-bottom: 10px;
   }
   
   .sidenav {
@@ -115,5 +115,10 @@ footer {
   width: 100%;
 }
 /*------------------------------------*/
+
+body {
+  background-image: url("../assests/images/page-background.jpg");
+  background-size: cover;
+}
 
 
