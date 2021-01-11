@@ -1,7 +1,7 @@
 ﻿@model string ;
 
 <ul class="nav navbar-nav ml-md-auto">
-    <li class="nav-item dropdown" id="ProfileWithPicture">>
+    <li class="nav-item dropdown" id="ProfileWithPicture">
         @if (User.Identity.IsAuthenticated && Model != string.Empty)
         {
             <a href="#" class="nav-link dropdown-toggle p-0" data-toggle="dropdown">
@@ -11,6 +11,7 @@
         }
         else
         {
+            
             <a class="btn btn-outline-primary mt-md-" asp-action="Login" asp-controller="Auth">Login with github</a>
         }
         <div class="dropdown-menu dropdown-menu-right">
@@ -24,7 +25,7 @@
     </li>
 
     <li id="ProfileWithoutPicture" class="nav-item">
-        <a  class="nav-link" asp-controller="Auth" asp-action="Logout">
+        <a class="nav-link" asp-controller="Auth" asp-action="Logout">
             <span class="mr-2">Logout</span>
         </a>
     </li>
