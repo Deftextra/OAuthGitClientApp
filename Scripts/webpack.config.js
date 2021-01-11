@@ -7,7 +7,6 @@ module.exports = (env, argv) => {
     return {
         entry: './src/index.js',
         output: {
-            filename: "main.js",
             path: path.resolve(__dirname, "dist"),
             publicPath: "https://localhost:8080/dist"
         },
@@ -34,18 +33,16 @@ module.exports = (env, argv) => {
                     }
                 },
                 {
+                    test: /\.(?:ico|gif|png|jpg|jpeg)$/i,
+                    type: 'asset/resource',
+                },
+                {
                     test: /\.s[ac]ss$/i,
                     use: [
                         "style-loader",
                         "css-loader",
                         "sass-loader",
                     ],
-                },
-                {
-                    test: /\.(png|svg|jpg|gif)$/,
-                    use: [
-                        'file-loader'
-                    ]
                 }
             ]
         },

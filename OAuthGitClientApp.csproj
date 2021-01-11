@@ -24,6 +24,14 @@
     <_ContentIncludedByDefault Remove="wwwroot\dir\main.cshtml" />
     <_ContentIncludedByDefault Remove="wwwroot\dir\main.js" />
     <_ContentIncludedByDefault Remove="wwwroot\dir\main.js.LICENSE.txt" />
+    <_ContentIncludedByDefault Remove="Scripts\dist\main.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Scripts\assests\images\page-background.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
   </ItemGroup>
 
 </Project>
