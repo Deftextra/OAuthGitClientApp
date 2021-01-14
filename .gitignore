@@ -442,8 +442,8 @@ $RECYCLE.BIN/
 !.vscode/extensions.json
 
 # Webpack
-./Scripts/dist
-./Scripts/*.pem
-_GeneratedViews/
+Scripts/*.pem
+Pages/_GeneratedViews/
+Scripts/dist/
 
 
