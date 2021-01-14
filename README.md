@@ -38,7 +38,7 @@ The following settings are crucial:
 
 Choose any name you like for the other options.
 
-###App 
+### App 
 At current state of development, we have a simple 2 page app which allows to user to login using github authentication
 and lists to flowing git resources of the user:
 
