@@ -28,10 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Scripts\assests\images\page-background.jpg">
-      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
+    <Content Include="Scripts\src\assets\images\page-background.jpg" />
   </ItemGroup>
 
 </Project>

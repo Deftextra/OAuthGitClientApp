@@ -1,5 +1,5 @@
 import 'bootstrap';
-import '../sass/index.scss'
+import './index.scss'
 import $ from 'jquery'
 
 
@@ -11,6 +11,4 @@ window.addEventListener("load", () => {
 })
 
 window.addEventListener("load", () => {
-
-
 });

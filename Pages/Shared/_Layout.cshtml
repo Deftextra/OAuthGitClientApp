@@ -1,7 +1,9 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    @await Html.PartialAsync("~/Scripts/dist/main.cshtml")
+    @await Html.PartialAsync("_GeneratedViews/generated-runtime")
+    @await Html.PartialAsync("_GeneratedViews/generated-layout")
+    @await RenderSectionAsync("Scripts", false)
     <title>GitHub Client</title>
 </head>
 

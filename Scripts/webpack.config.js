@@ -5,11 +5,33 @@ const RazorPartialViewsWebpackPlugin = require("razor-partial-views-webpack-plug
 
 module.exports = (env, argv) => {
     return {
-        entry: './src/index.js',
+        resolve: {
+            alias: {
+                Images: path.resolve(__dirname, 'src/assets/images/')
+            }
+        },
+        entry: {
+            index:
+            {
+                import: './src/pages/index/index.js',
+                filename: 'pages/index/index.js'
+            },
+            profile: 
+            {
+                import: './src/pages/profile/profile.js',
+                filename: 'pages/profile/profile.js'
+            },
+            layout: {
+                import: './src/pages/shared/layout/layout.js',
+                filename: 'pages/shared/layout/layout.js'
+            }
+
+        },
         output: {
             path: path.resolve(__dirname, "dist"),
             publicPath: "https://localhost:8080/dist"
         },
+        devtool: false,
         devServer: {
             writeToDisk: true,
             overlay: true,
@@ -19,6 +41,9 @@ module.exports = (env, argv) => {
             https: true,
             cert: fs.readFileSync("./localhost.pem"),
             key: fs.readFileSync("./localhost-key.pem")
+        },
+        optimization: {
+            runtimeChunk: 'single',
         },
         module: {
             rules: [
@@ -49,9 +74,22 @@ module.exports = (env, argv) => {
         plugins: [
             new CleanWebpackPlugin(),
             new RazorPartialViewsWebpackPlugin({
-                rules: [{
-                    name: "main"
-                }]
+                rules: [
+                    {
+                        test: /.*\.js$/,
+
+                        template: {
+                            using: ["System", "System.Web"],
+                            model: "dynamic",
+                            footer: () => `@* View generated ${new Date().toISOString()} *@`,
+                        },
+                        output: {
+
+                            name: defaultName => `generated-${defaultName}`,
+                            path: "../Pages/_GeneratedViews/"
+                        }
+                    }
+                ],
             })
         ]
     }
