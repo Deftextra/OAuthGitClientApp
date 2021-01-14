@@ -23,7 +23,7 @@ npm run start
 
 or run the [start](start.sh) bash script from project root.
 
-Otherwise, configure the app to you needs.
+Otherwise, configure the app to your needs.
 
 ### Register App with github.
 
