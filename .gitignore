@@ -444,6 +444,6 @@ $RECYCLE.BIN/
 # Webpack
 ./Scripts/dist
 ./Scripts/*.pem
-./Pages/_GeneratedViews/
+_GeneratedViews/
 
 
