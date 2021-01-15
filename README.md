@@ -16,9 +16,9 @@ We use Webpack to manage and inject theses assets into our razor pages.
 
 To build and start the servers run the following commands from the project root:
 ```bash
-dotnet watch run
+dotnet watch run &
 cd Scripts
-npm run start
+npm run start &
 ```
 
 or run the [start](start.sh) bash script from project root.
