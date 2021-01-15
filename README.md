@@ -6,11 +6,11 @@ We use the [Authorization Code Flow](https://tools.ietf.org/html/rfc6749#section
 
 
 
-##Usage
+## Usage
 
 ---
 
-###Development
+### Development
 We have a Scripts folder which contains all the assets (Scripts and css) used by the pages served from asp.net razor pages app.
 We use Webpack to manage and inject theses assets into our razor pages.
 
@@ -23,9 +23,9 @@ npm run start &
 
 or run the [start](start.sh) bash script from project root.
 
-Otherwise, configure the app to you needs.
+Otherwise, configure the app to your needs.
 
-#### Register App with github.
+### Register App with github.
 
 1. Go to user settings on github and click on "Developer settings" in the left panel.
 2. Click on "OAuth Apps" then click "New Oauth App" to register a new App.
@@ -38,7 +38,7 @@ The following settings are crucial:
 
 Choose any name you like for the other options.
 
-###App 
+### App 
 At current state of development, we have a simple 2 page app which allows to user to login using github authentication
 and lists to flowing git resources of the user:
 
